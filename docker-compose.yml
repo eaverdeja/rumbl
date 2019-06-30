@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: docker
+    ports:
+      - 5432:5432
+    volumes: 
+      - /var/lib/docker/volumes/postgres:/var/lib/postgresql/data
+    networks:
+      - postgres-network
+  
+  app:
+    build:
+      context: ./docker/dev
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    depends_on:
+      - postgres
+    volumes:
+      - .:/workspace
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.ssh:/root/.ssh
+    command: sleep infinity
+    networks:
+      - postgres-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "eaverdeja@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "PgAdmin2019!"
+    ports:
+      - 16543:80
+    depends_on:
+      - postgres
+    networks:
+      - postgres-network
+
+networks: 
+  postgres-network:
+    driver: bridge
