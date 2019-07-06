@@ -18,6 +18,8 @@ defmodule Rumbl.Multimedia do
       [%Video{}, ...]
 
   """
+  def list_videos, do: Repo.all(Video)
+
   def list_user_videos(%Accounts.User{} = user) do
     Video
     |> user_videos_query(user)
@@ -38,6 +40,8 @@ defmodule Rumbl.Multimedia do
       ** (Ecto.NoResultsError)
 
   """
+  def get_video!(id), do: Repo.get!(Video, id)
+
   def get_user_video!(%Accounts.User{} = user, id) do
     Video
     |> user_videos_query(user)
