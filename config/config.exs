@@ -1,21 +1,28 @@
-# This file is responsible for configuring your application
-# and its dependencies with the aid of the Mix.Config module.
+# This file is responsible for configuring your umbrella
+# and **all applications** and their dependencies with the
+# help of Mix.Config.
 #
-# This configuration file is loaded before any dependency and
-# is restricted to this project.
-
-# General application configuration
+# Note that all applications in your umbrella share the
+# same configuration and dependencies, which is why they
+# all use the same configuration file. If you want different
+# configurations or dependencies per app, it is best to
+# move said applications out of the umbrella.
 use Mix.Config
 
+# Configure Mix tasks and generators
 config :rumbl,
   ecto_repos: [Rumbl.Repo]
 
+config :rumbl_web,
+  ecto_repos: [Rumbl.Repo],
+  generators: [context_app: :rumbl]
+
 # Configures the endpoint
-config :rumbl, RumblWeb.Endpoint,
+config :rumbl_web, RumblWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "pahQYJmkbOTVqdrxcSE3W6+acnfN/9mWc2MnjPq7XCPCJCRI41rRJnUkZh4cX28n",
+  secret_key_base: "vTuqWNKbfcfdhtxkSEIp+d27/ian4uBJHTCmiUqL9XFyE0OYisCKQI6TuaAnkf0c",
   render_errors: [view: RumblWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Rumbl.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: RumblWeb.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
