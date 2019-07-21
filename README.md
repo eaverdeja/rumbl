@@ -1,8 +1,8 @@
 # Rumbl
 
-The main application created in the [Programming Phoenix](https://pragprog.com/book/phoenix14/programming-phoenix-1-4) book.
+The main application created in the [Programming Phoenix](https://pragprog.com/book/phoenix14/programming-phoenix-1-4) book. The most up to date content can be found in this previous link. The book is versioned and updates and released to previous buyers 👍
 
-Here's how the authors of the book describe it:
+Here's how the authors of the book describe the app:
 
 > Our application will be called rumbl. When we’re all done, the application will
 > allow us to take videos (hosted elsewhere), and attach comments to them in
