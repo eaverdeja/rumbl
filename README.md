@@ -1,6 +1,6 @@
 # Rumbl
 
-The main application created in the [Programming Phoenix](https://pragprog.com/book/phoenix14/programming-phoenix-1-4) book. The most up to date content can be found in this previous link. The book is versioned and updates and released to previous buyers 👍
+The main application created in the [Programming Phoenix](https://pragprog.com/book/phoenix14/programming-phoenix-1-4) book. The most up to date content can be found in this previous link. The book is versioned and updates are released to previous buyers 👍
 
 Here's how the authors of the book describe the app:
 
